@@ -14,26 +14,34 @@ namespace Taschenrechner_Berger
 
             do
             {
-                Console.WriteLine("Geben Sie die erste Zahl ein: ");
-                int zahl1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Geben Sie die zweite Zahl ein: ");
-                int zahl2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Geben Sie die Rechenoperation an");
-                Console.WriteLine("1. Addition");
-                Console.WriteLine("2. Subtraktion");
-                int operation = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Willkommen beim Taschenrechner!");
+                Console.WriteLine("Geben Sie die Rechenoperation (+,-,*,/) an");
+                Console.WriteLine("+ Addition");
+                Console.WriteLine("- Subtraktion");
+                Console.WriteLine("* Multiplikation");
+                char operation = Convert.ToChar(Console.ReadLine());
+
+                Console.WriteLine("Geben Sie die erste Zahl ein:");
+                double zahl1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Geben Sie die zweite Zahl ein:");
+                double zahl2 = Convert.ToDouble(Console.ReadLine());
+
+                double ergebnis = 0;
 
                 switch(operation)
                 {
-                    case 1:
-                        int ergebnisAdd = zahl1 + zahl2;
-                        Console.WriteLine("Das Ergebnis ist: " + ergebnisAdd);
+                    case '+':
+                        ergebnis = zahl1 + zahl2;
                         break;
-                    case 2:
-                        int ergebnisSub = zahl1 - zahl2;
-                        Console.WriteLine("Das Ergebnis ist: " + ergebnisSub);
+                    case '-':
+                        ergebnis = zahl1 - zahl2;
+                        break;
+                    case '*':
+                        ergebnis = zahl1 * zahl2;
                         break;
                 }
+
+                Console.WriteLine("Das Ergebnis ist: " + ergebnis);
 
                 Console.WriteLine("Wollen Sie erneut rechnen? Geben Sie J oder N ein.");
                 entscheidung = Console.ReadLine();
